@@ -1,13 +1,61 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+html, body{
+  height: 100%;
+}
+body{
+  background-color: #f5ebe0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Main-Container{
+    margin-top: 30%;
+}
+h1{
+  text-align: center;
+  margin-bottom: 1em;
+}
+.container{
+  height: 700px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 4em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.card{
+  background-color: #cdb4db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transform: rotateY(180deg);
+  animation: 1s hideCard linear;
+  transition: transform 0.8s;
+}
+@keyframes hideCard{
+  0%, 70%{
+    transform: rotateY(0);
+  }
+  100%{
+    transform: rotateY(180deg);
+  }
+}
+.card img{
+  max-width: 200px;
+  max-height: 200px;
+  transition: transform 0.5s;
+  transform: scale(0);
+  animation: 2s hideImage linear;
+}
+
+.card.active{
+  transform: rotateY(0);
+}
+.card.active img{
+  transform: scale(1);
 }

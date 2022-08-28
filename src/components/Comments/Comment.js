@@ -2,7 +2,8 @@ import React,{useState,useEffect} from 'react'
 import { info } from '../../data/item';
 import classes from "./Comment.module.css"
 function Comment() {
-const [PostDiable, setPostDiable] = useState(true);
+const [HideCOmment, setHideCOmment] = useState(false)
+    const [PostDiable, setPostDiable] = useState(true);
 const [AddButtonVisible, setAddButtonVisible] = useState(true);
 const [Comment, setComment] = useState("");
 const [User, setUser] = useState("");
@@ -48,9 +49,10 @@ setAddButtonVisible(true);
 
   return (
     <div className={classes.commentContainer}>
-        <button>All Comments</button>
+        <button onClick={()=>setHideCOmment(!HideCOmment)}>All Comments</button>
         <br/>
-<ul style={{listStyle:"none"}}>
+{
+    HideCOmment && <ul style={{listStyle:"none"}}>
     {Post.map((p,i)=>{
         return(<div key={i} className={classes.Comments}>
             <h1>{p.Comment}.</h1>
@@ -61,6 +63,7 @@ setAddButtonVisible(true);
 
     })}
 </ul>
+}
 <div>
 { AddButtonVisible &&
 <button onClick={()=>setAddButtonVisible(false)}>Add Comment+</button>

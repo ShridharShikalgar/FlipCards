@@ -4,6 +4,7 @@
 .commentContainer button{
     background-color: black;
     color: white;
+    margin-top: 10px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 600;
     font-size: 1.7rem;
@@ -11,13 +12,12 @@
     border-radius: .5rem;
 }
 .Comments{
+ margin-top: 5px;
     border: .1rem solid black;
     display: flex;
     width: 60%;
-    /* text-overflow:hide; */
     white-space: nowrap;
-overflow: hidden;
-    /* overflow-wrap: break-word; */
+    overflow: hidden;
 }
 .Comments h6{
     position: absolute;

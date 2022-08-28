@@ -6,6 +6,7 @@ html, body{
   height: 75%;
 }
 body{
+ margin-top: 10%;
   background-color: #f5ebe0;
   display: flex;
   justify-content: center;

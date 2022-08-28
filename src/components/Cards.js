@@ -14,7 +14,7 @@ function Cards(){
             items[i].stat="";
         }
         if(items[id].stat==="active"){
-            items[id].stat="";
+        
         }
         else{
             items[id].stat = "active";
@@ -22,6 +22,7 @@ function Cards(){
         setItems(items)
         setPrev(!prev) 
     }
+    
 
     return (
         <div className="container">
